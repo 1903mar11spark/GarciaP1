@@ -33,5 +33,11 @@ public class Login {
 		this.employeeId = employeeId;
 	}
 	
+	public Login(String userId, String password) {
+		super();
+		this.userId = userId;
+		this.password = password;
+	}
+	
 	
 }

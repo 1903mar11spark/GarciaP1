@@ -11,4 +11,14 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DashboardHR</display-name>
+    <servlet-name>DashboardHR</servlet-name>
+    <servlet-class>com.revature.servlets.DashboardHR</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardHR</servlet-name>
+    <url-pattern>/DashboardHR</url-pattern>
+  </servlet-mapping>
 </web-app>
