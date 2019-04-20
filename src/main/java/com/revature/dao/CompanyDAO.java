@@ -8,6 +8,5 @@ import com.revature.beans.Reimbursements;
 
 public interface CompanyDAO {
 	public boolean createEmployee(Employee emp);
-	
-
+	public String isvalidUser(Login log);
 }

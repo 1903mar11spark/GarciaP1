@@ -3,13 +3,13 @@
   <display-name>Project1</display-name>
   <servlet>
     <description></description>
-    <display-name>Login</display-name>
-    <servlet-name>Login</servlet-name>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.revature.servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Login</servlet-name>
-    <url-pattern>/Login</url-pattern>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -19,6 +19,36 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DashboardHR</servlet-name>
-    <url-pattern>/DashboardHR</url-pattern>
+    <url-pattern>/dashboardHR</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionServlet</display-name>
+    <servlet-name>SessionServlet</servlet-name>
+    <servlet-class>com.revature.servlets.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionServlet</servlet-name>
+    <url-pattern>/session</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DashboardAs</display-name>
+    <servlet-name>DashboardAs</servlet-name>
+    <servlet-class>com.revature.servlets.DashboardAs</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardAs</servlet-name>
+    <url-pattern>/dashboardAs</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DashboardMa</display-name>
+    <servlet-name>DashboardMa</servlet-name>
+    <servlet-class>com.revature.servlets.DashboardMa</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DashboardMa</servlet-name>
+    <url-pattern>/dashboardMa</url-pattern>
   </servlet-mapping>
 </web-app>
