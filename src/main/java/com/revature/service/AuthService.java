@@ -39,6 +39,7 @@ public class AuthService {
 		}
 		return privilage;
 	}
+	
 	public String getPrivilage(int eId) {
 		String result ="";
 		try (Connection con = ConnectionUtil.getConnection()) {
@@ -57,5 +58,25 @@ public class AuthService {
 		return result;
 	}
 	
-
+	public String getUserId(Login log) {
+		String result ="";
+		String username = log.getUserId();
+		String password = log.getPassword();
+		if (username != null && password != null) {
+			try (Connection con = ConnectionUtil.getConnection()) {
+				String sql =  "SELECT * FROM LOGIN WHERE USER_ID = ?";
+				PreparedStatement pstmt = con.prepareStatement(sql);
+				pstmt.setString(1,username);
+				ResultSet rs= pstmt.executeQuery();
+				while(rs.next()) {
+					String rPass = rs.getString("U_PASSWORD");
+					int eId = rs.getInt("EMPLOYEE_ID");
+					result = Integer.toString(eId);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }

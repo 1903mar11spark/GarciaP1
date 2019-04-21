@@ -34,6 +34,22 @@ public class Employee {
 		this.zip = zip;
 	}
 	
+	public Employee(String firstName, String lastName, String title, int subordinate, String address,
+			String phone, String dob, String hireDate, String city, String state, String zip) {
+		super();
+		this.firstName = firstName;
+		LastName = lastName;
+		this.title = title;
+		this.subordinate = subordinate;
+		this.address = address;
+		this.phone = phone;
+		this.dob = dob;
+		this.hireDate = hireDate;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
+	
 	//toString
 
 	@Override

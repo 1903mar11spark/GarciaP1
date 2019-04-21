@@ -22,24 +22,17 @@ public class LoginServlet extends HttpServlet {
 	
 	private AuthService as = new AuthService();
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("Login.html").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// check whether session exists, and create one if not
 		// overloaded version takes a boolean parameter, if false returns null when there is none
@@ -49,14 +42,16 @@ public class LoginServlet extends HttpServlet {
 		Login log = new Login(request.getParameter("username"), request.getParameter("password"));
 		//attempt to authenticate user
 		String typeUser = as.isValidUser(log);
-		
+		String uId = as.getUserId(log);
 		
 		if (typeUser != "") {
+			session.setAttribute("userId", uId);
+			session.setAttribute("typeUser", typeUser);
 			switch (typeUser){
-				case "ASSOCIATE":
+				case "Associate":
 					response.sendRedirect("dashboardAs");
 					break;
-				case "MANAGER":
+				case "Manager":
 					response.sendRedirect("dashboardMa");
 					break;
 				case "HR":
@@ -69,8 +64,11 @@ public class LoginServlet extends HttpServlet {
 					break;
 			}	
 		} else {
-		 Enumeration<String> whole = request.getParameterNames();
+		
 			session.setAttribute("problem", "invalid credentials");
+			response.sendRedirect("login");
+			/*//this was to check the parameter names and if was getting correctly the user input
+			 Enumeration<String> whole = request.getParameterNames();
 			PrintWriter pw = response.getWriter();
 			
 			while (whole.hasMoreElements()) {
@@ -88,7 +86,7 @@ public class LoginServlet extends HttpServlet {
 		            }
 		 
 		        }
-			pw.write(typeUser);
+			pw.write(typeUser);*/
 		}
 	}
 
