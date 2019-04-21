@@ -45,6 +45,7 @@
                     </ul>
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        
                         <ul class="nav navbar-nav side-nav">
                             <li>
                                 <a href="RequestHR.html"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</a>
@@ -54,11 +55,14 @@
                             </li>
                             <li>
                             <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-user-plus"></i> Employees<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                            <ul id="submenu-1" class="collapse">
-                                <li><a href="addUser.html"><i class="fa fa-angle-double-right"></i> Add</a></li>
+                            <form action="DashboardHR" method="POST"></form>
+                            <ul id="submenu-1" class="collapse">  
+                                <li><input type ="submit" name ="act" value = "Add"></li>
                                 <li><a href="UpdateEmployee.html"><i class="fa fa-angle-double-right"></i> Update</a></li>
                                 <li><a href="DeleteEmployee.html"><i class="fa fa-angle-double-right"></i> Delete</a></li>
+                          
                             </ul>
+                        </form>
                         </li>
                         <li>
                                 <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-book"></i> Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
@@ -69,6 +73,7 @@
                             </li>
                            
                         </ul>
+                        </form>
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>

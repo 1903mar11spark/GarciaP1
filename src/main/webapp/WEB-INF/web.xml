@@ -51,4 +51,34 @@
     <servlet-name>DashboardMa</servlet-name>
     <url-pattern>/dashboardMa</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddEmployeeServlet</display-name>
+    <servlet-name>AddEmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.AddEmployeeSevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddEmployeeServlet</servlet-name>
+    <url-pattern>/addEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateEmployeeServlet</display-name>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEmployeeServlet</servlet-name>
+    <url-pattern>/updateEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestA</display-name>
+    <servlet-name>RequestA</servlet-name>
+    <servlet-class>com.revature.servlets.RequestA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestA</servlet-name>
+    <url-pattern>/requestA</url-pattern>
+  </servlet-mapping>
 </web-app>
