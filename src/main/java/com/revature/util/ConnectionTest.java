@@ -1,26 +1,30 @@
 package com.revature.util;
 
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.revature.beans.Employee;
 import com.revature.beans.Login;
+import com.revature.beans.Reimbursements;
 import com.revature.dao.CompanyDAO;
 import com.revature.dao.CompanyDAOImpl;
 import com.revature.service.AuthService;
 import com.revature.service.NewEmployee;
+import com.revature.service.RequestAService;
 
 
 public class ConnectionTest {
 	
-	public static void main(String [] args) {
+	public static void main(String [] args) throws FileNotFoundException {
 		
 		screen();
 	}
 
-	public static void screen() {
+	public static void screen() throws FileNotFoundException {
 		AuthService bd = new AuthService();
 		NewEmployee ne = new NewEmployee();
+		RequestAService ra = new RequestAService();
 		String result="";
 		//CompanyDAO bd2 = new CompanyDAOImpl();
 		
@@ -38,9 +42,12 @@ public class ConnectionTest {
 			System.out.println(exists);
 		}
 		uInput.close();*/
-		Employee em = new Employee("Xigbar","Freeshoter", "Manager", 7, "1535 Radiant Garden ave.","(657)569 6688", "02/15/1996","12/12/13","Tampa", "FL","78423");
+		/*Employee em = new Employee("Xigbar","Freeshoter", "Manager", 7, "1535 Radiant Garden ave.","(657)569 6688", "02/15/1996","12/12/13","Tampa", "FL","78423");
 		result=ne.setEmployee(em);
-		System.out.println(result);
+		System.out.println(result);*/
+		
+		Reimbursements reim = new Reimbursements(23, "This is a test", "C:\\Project1\\GarciaP1\\src\\main\\webapp\\Styles\\recipt1.gif", 13);
+		result = ra.requestA(reim);
 	}
 
 }

@@ -43,12 +43,12 @@ public class LoginServlet extends HttpServlet {
 		//attempt to authenticate user
 		String typeUser = as.isValidUser(log);
 		String uId = as.getUserId(log);
-		
+		session.setAttribute("userId", uId);
+		session.setAttribute("typeUser", typeUser);
 		if (typeUser != "") {
-			session.setAttribute("userId", uId);
-			session.setAttribute("typeUser", typeUser);
 			switch (typeUser){
 				case "Associate":
+					System.out.println((String) session.getAttribute("userId"));
 					response.sendRedirect("dashboardAs");
 					break;
 				case "Manager":

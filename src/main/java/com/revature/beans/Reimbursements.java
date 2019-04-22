@@ -7,6 +7,8 @@ public class Reimbursements {
 	private String rDesc;
 	private String rImg;//ask about this because its the blob
 	private int employeeId;
+	private String issued;
+	private String authDate;
 	private int auth;
 	public int getrId() {
 		return rId;
@@ -50,12 +52,25 @@ public class Reimbursements {
 	public void setAuth(int auth) {
 		this.auth = auth;
 	}
+	
+	
+	public String getIssued() {
+		return issued;
+	}
+	public void setIssued(String issued) {
+		this.issued = issued;
+	}
+	public String getAuthDate() {
+		return authDate;
+	}
+	public void setAuthDate(String authDate) {
+		this.authDate = authDate;
+	}
 	@Override
 	public String toString() {
-		return "Reimbursements [rId=" + rId + ", rValue=" + rValue + ", rState=" + rState + ", rDesc=" + rDesc
-				+ ", rImg=" + rImg + ", employeeId=" + employeeId + ", auth=" + auth + "]";
+		return "Reimbursements [rId=" + rId + ", rValue=" + rValue + ", rState=" + rState + " , Issued= "+ issued + ", authDate=" + authDate + "]";
 	}
-	public Reimbursements(int rId, double rValue, String rState, String rDesc, String rImg, int employeeId,
+	/*public Reimbursements(int rId, double rValue, String rState, String rDesc, String rImg, int employeeId,
 			int auth) {
 		super();
 		this.rId = rId;
@@ -65,7 +80,7 @@ public class Reimbursements {
 		this.rImg = rImg;
 		this.employeeId = employeeId;
 		this.auth = auth;
-	}
+	}*/
 	
 	public Reimbursements(double rValue, String rDesc, String rImg, int employeeId) {
 		super();
@@ -73,6 +88,14 @@ public class Reimbursements {
 		this.rDesc = rDesc;
 		this.rImg = rImg;
 		this.employeeId = employeeId;
+	}
+	public Reimbursements(int rId, double rValue, String rState, String issued, String authDate) {
+		super();
+		this.rId = rId;
+		this.rValue = rValue;
+		this.rState = rState;
+		this.issued = issued;
+		this.authDate = authDate;
 	}
 	
 	
