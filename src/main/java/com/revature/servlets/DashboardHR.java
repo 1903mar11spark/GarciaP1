@@ -34,7 +34,7 @@ public class DashboardHR extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		response.sendRedirect("addEmployee");
 		String act = request.getParameter("act");
 		 Enumeration<String> whole = request.getParameterNames();
 			PrintWriter pw = response.getWriter();

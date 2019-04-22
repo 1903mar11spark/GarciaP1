@@ -1,10 +1,14 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.revature.service.RequestAService;
 import com.revature.beans.Reimbursements;
@@ -38,14 +42,20 @@ public class RequestA extends HttpServlet {
 		double amount = Double.parseDouble(amountS);
 		String desc =request.getParameter("desc");
 		String img = request.getParameter("inputRecipt");
-		Reimbursements reim = new Reimbursements(amount, desc, img, );
+		//img = "C:\\Project1\\GarciaP1\\src\\main\\webapp\\Styles\\recipt1.gif";
+		HttpSession session = request.getSession(true);
+		String eId = (String) session.getAttribute("userId");
+		//int eId = (int) session.getAttribute("userId");
+		int idE = Integer.parseInt(eId);
+		Reimbursements reim = new Reimbursements(amount, desc, img, idE);
 		String result = ra.requestA(reim);
 		if(result !="") {
-			response.sendRedirect("addEmployee");
+			response.sendRedirect("requestA");
 		}else {
 			//show alert employee was sucessfully been created
-			response.sendRedirect("addEmployee");
+			response.sendRedirect("requestA");
 		}
+		
 	}
 
 }
