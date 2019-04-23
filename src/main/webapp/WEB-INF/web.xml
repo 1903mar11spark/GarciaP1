@@ -121,4 +121,14 @@
     <servlet-name>getEmployeeA</servlet-name>
     <url-pattern>/getEmployeeA</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestMServlet</display-name>
+    <servlet-name>RequestMServlet</servlet-name>
+    <servlet-class>com.revature.servlets.RequestMServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestMServlet</servlet-name>
+    <url-pattern>/requestM</url-pattern>
+  </servlet-mapping>
 </web-app>
