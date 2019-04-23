@@ -81,4 +81,14 @@
     <servlet-name>RequestA</servlet-name>
     <url-pattern>/requestA</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getRequest</display-name>
+    <servlet-name>getRequest</servlet-name>
+    <servlet-class>com.revature.servlets.getRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getRequest</servlet-name>
+    <url-pattern>/getRequest</url-pattern>
+  </servlet-mapping>
 </web-app>
