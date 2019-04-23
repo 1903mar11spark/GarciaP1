@@ -14,7 +14,7 @@
        
         <link rel="stylesheet" type="text/css" media="screen" href="Styles/dashboard.css">
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+  
     <body>
             <div id="throbber" style="display:none; min-height:120px;"></div>
             <div id="noty-holder"></div>
@@ -29,27 +29,38 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="Dashboard-Associate.html">
+                        <a class="navbar-brand" href="#">
                             <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
                         </a>
                     </div>
-                    <!-- Top Menu Items -->
-                    <ul class="nav navbar-right top-nav">       
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="fa fa-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="UpdateProfileA.html"><i class="fa fa-fw fa-user"></i> Update Profile</a></li>
-                                <li class="divider"></li>
-                                <li><a href="Login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+
+                     <!-- Top Menu Items -->
+                     <ul class="nav navbar-right top-nav">       
+                            <li class="dropdown">
+                                <h5>User</h5>
+                                <br>
+                            </li>
+                        </ul>
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
-                            <form action="dashboardAs" method ="post">
+                            <br>
                             <li>
-                                <button type="submit" name="request" value ="dashboardAs"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</button>
+                                <form action = http://localhost:8084/Project1/requestA>
+                                <input type = "submit" id="request" name ="requestA" value = "Create Request"> 
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateA>
+                                <input type = "submit" id="updateA" name ="update" value = "Update Profile" >
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/logout>
+                                <input type = "submit" id="logout" name ="logout" value = "Log out">
+                                </form>
                             </li>
                         </form>
                         </ul>
@@ -66,9 +77,9 @@
                                 
                                 <form action="dashboardAs" method="GET">
                                         <h3>Reimbursement Requests:</h3>
-                                    <button type="submit" name="getRequest" value ="dashboardAs"><i class="fa fa-fw fa-paper-plane-o"></i> My Request</button>
                                 </form>
-                                <table id = rList class="table table-hover">
+                                <table id = reList class="table table-hover">
+                                    <thead></thead>
                                     <tr>
                                     <th scope="col">Request Id</th>
                                     <th scope="col">Request Value</th>
@@ -76,6 +87,10 @@
                                     <th scope="col">Request Issued</th>
                                     <th scope="col">Request Auth Date</th>
                                 </tr>
+                                </thead>
+                                <tbody id = rList>
+                                    
+                                </tbody>
                                 </table>
                             </div>
                         </div>
@@ -86,5 +101,6 @@
                 <!-- /#page-wrapper -->
             </div><!-- /#wrapper -->
             <script src="./Scripts/displayRA.js"></script>
+           
     </body>
 </html>

@@ -1,5 +1,7 @@
 window.onload = function() {
     getRequest();
+   
+    
 }
 function getRequest(){
     fetch("http://localhost:8084/Project1/getRequest")
@@ -44,8 +46,8 @@ function getRequest(){
     }
     });
 }
-    //getingUser();
-   // sendAjaxGet('http://localhost:8084/Project1/dashboardAs', showRequest);
+
+
 
 
 

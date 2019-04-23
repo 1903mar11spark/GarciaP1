@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="ISO-8859-1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard</title>
+        <link rel="icon" type="image/ico" href="Styles/icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="nav.js"></script>
+       
+        <link rel="stylesheet" type="text/css" media="screen" href="Styles/dashboard.css">
+    </head>
+    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+    <body>
+            <div id="throbber" style="display:none; min-height:120px;"></div>
+            <div id="noty-holder"></div>
+            <div id="wrapper">
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Dashboard-Associate.html">
+                            <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
+                        </a>
+                    </div>
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav">       
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="fa fa-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Update Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="Login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav side-nav">
+                            <form action="dashboardAs" method ="post">
+                            <li>
+                                <button type="submit" name="request" value ="dashboardAs"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</button>
+                            </li>
+                        </form>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            
+                <div id="page-wrapper">
+                    <div class="container-fluid">
+                        <!-- Page Heading -->
+                        
+                        <div class="row" id="main" >
+                                <div class="col-sm-12 col-md-12 well" id="content">
+                                    <h3>Update your personal information</h3>
+                                    <br>
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputName">First Name</label>
+                                                <input type="text" class="form-control" id="inputName" placeholder="First Name">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                    <label for="inputLastN">Last Name</label>
+                                                    <input type="text" class="form-control" id="inputLastN" placeholder="Last Name">
+                                            </div>
+                            
+                                             <div class="form-group col-md-6">
+                                                    <label for="inputPhone">Phone</label>
+                                                    <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                    <label for="inputDOB">Date of Birth</label>
+                                                    <input type="date" class="form-control" id="inputDOB">
+                                                    </div>
+                                            </div>
+                                          <div class="form-group">
+                                            <label for="inputAddress">Address</label>
+                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                          </div>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <label for="inputCity">City</label>
+                                              <input type="text" class="form-control" id="inputCity">
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                              <label for="inputState">State</label>
+                                              <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>AK</option>
+                                                <option>AL</option>
+                                                <option>AZ</option>
+                                                <option>AR</option>
+                                                <option>CA</option>
+                                                <option>CO</option>
+                                                <option>CT</option>
+                                                <option>DE</option>
+                                                <option>FL</option>
+                                                <option>GA</option>
+                                                <option>HI</option>
+                                                <option>ID</option>
+                                                <option>IL</option>
+                                                <option>IN</option>
+                                                <option>IA</option>
+                                                <option>KS</option>
+                                                <option>KY</option>
+                                                <option>LA</option>
+                                                <option>ME</option>
+                                                <option>MD</option>
+                                                <option>MA</option>
+                                                <option>MI</option>
+                                                <option>MN</option>
+                                                <option>MS</option>
+                                                <option>MO</option>
+                                                <option>MT</option>
+                                                <option>NE</option>
+                                                <option>NV</option>
+                                                <option>NH</option>
+                                                <option>NJ</option>
+                                                <option>NM</option>
+                                                <option>NY</option>
+                                                <option>NC</option>
+                                                <option>ND</option>
+                                                <option>OH</option>
+                                                <option>OK</option>
+                                                <option>OR</option>
+                                                <option>PA</option>
+                                                <option>RI</option>
+                                                <option>SC</option>
+                                                <option>SD</option>
+                                                <option>TN</option>
+                                                <option>TX</option>
+                                                <option>UT</option>
+                                                <option>VT</option>
+                                                <option>VA</option>
+                                                <option>WA</option>
+                                                <option>WV</option>
+                                                <option>WI</option>
+                                                <option>WY</option>
+                                              </select>
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                              <label for="inputZip">Zip</label>
+                                              <input type="text" class="form-control" id="inputZip">
+                                            </div>
+                                          </div>
+                                         
+                                          <button type="submit" class="btn btn-primary">Submit</button>
+    
+                                    </form>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /#page-wrapper -->
+            </div><!-- /#wrapper -->
+            <script src="./Scripts/displayRA.js"></script>
+            <script src="./Scripts/getEmployee.js"></script>
+    </body>
+</html>
