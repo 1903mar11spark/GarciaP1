@@ -4,7 +4,7 @@ public class Employee {
 
 	private int employeeId;
 	private String firstName;
-	private String LastName;
+	private String lastName;
 	private String title;
 	private int subordinate;
 	private String address;
@@ -22,7 +22,7 @@ public class Employee {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
-		LastName = lastName;
+		this.lastName = lastName;
 		this.title = title;
 		this.subordinate = subordinate;
 		this.address = address;
@@ -38,7 +38,7 @@ public class Employee {
 			String phone, String dob, String hireDate, String city, String state, String zip) {
 		super();
 		this.firstName = firstName;
-		LastName = lastName;
+		this.lastName = lastName;
 		this.title = title;
 		this.subordinate = subordinate;
 		this.address = address;
@@ -52,9 +52,40 @@ public class Employee {
 	
 	//toString
 
+	public Employee(int eId, String firstName, String lastName, String address, String phone, String dob, String city,
+			String state, String zip) {
+		super();
+		this.employeeId = eId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.phone = phone;
+		this.dob = dob;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
+
+	public Employee(String fName, String lName, String address, String phone, String dob, String city,
+			String state, String zip) {
+		super();
+		this.firstName = fName;
+		this.lastName = lName;
+		this.address = address;
+		this.phone = phone;
+		this.dob = dob;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
+
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", LastName=" + LastName + ", title="
+		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", LastName=" + lastName + ", title="
 				+ title + ", subordinate=" + subordinate + ", address=" + address + ", phone=" + phone + ", dob=" + dob
 				+ ", hireDate=" + hireDate + ", city=" + city + ", state=" + state + ", zip=" + zip + "]";
 	}
@@ -83,12 +114,12 @@ public class Employee {
 
 
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 

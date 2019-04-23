@@ -81,4 +81,54 @@
     <servlet-name>RequestA</servlet-name>
     <url-pattern>/requestA</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getRequest</display-name>
+    <servlet-name>getRequest</servlet-name>
+    <servlet-class>com.revature.servlets.getRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getRequest</servlet-name>
+    <url-pattern>/getRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateA</display-name>
+    <servlet-name>UpdateA</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateA</servlet-name>
+    <url-pattern>/updateA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.revature.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getEmployeeA</display-name>
+    <servlet-name>getEmployeeA</servlet-name>
+    <servlet-class>com.revature.servlets.GetEmployeeAServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getEmployeeA</servlet-name>
+    <url-pattern>/getEmployeeA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestMServlet</display-name>
+    <servlet-name>RequestMServlet</servlet-name>
+    <servlet-class>com.revature.servlets.RequestMServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestMServlet</servlet-name>
+    <url-pattern>/requestM</url-pattern>
+  </servlet-mapping>
 </web-app>
