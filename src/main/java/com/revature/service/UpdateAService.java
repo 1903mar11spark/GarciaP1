@@ -26,7 +26,7 @@ public class UpdateAService {
 		
 		try (Connection con = ConnectionUtil.getConnection()) {
 			String sql = "UPDATE EMPLOYEE SET FIRST_NAME =?, LAST_NAME = ?, ADDRESS=?"
-					+ " ,PHONE = ?, DOB = ?,CITY = ? ,STATE_E = ? ,ZIP = ? WHERE EMPLOYEE_ID = " + eId + ")"; 
+					+ " ,PHONE = ?, DOB = ?,CITY = ? ,STATE_E = ? ,ZIP = ? WHERE EMPLOYEE_ID = " + eId; 
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,firstName);
 			pstmt.setString(2,lastName);
@@ -37,8 +37,9 @@ public class UpdateAService {
 			pstmt.setString(7,state);
 			pstmt.setString(8,zip);
 			ResultSet rs= pstmt.executeQuery();
-			result = "Employee was succesfully been created";
+			result = "Employee was succesfully been updated";
 		} catch (SQLException e) {
+			result = "update failed";
 			e.printStackTrace();
 		}
 		return result;

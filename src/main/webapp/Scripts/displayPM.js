@@ -4,7 +4,7 @@ window.onload = function() {
     
 }
 function getRequest(){
-    fetch("http://localhost:8084/Project1/getRequest")
+    fetch("http://localhost:8084/Project1/getPendingM")
 	.then(function(response){
 	return response.json();
 	})
@@ -16,6 +16,7 @@ function getRequest(){
 		}
 		else{
             console.log(data);
+            let counter = 1;
             for (let i = 0 ; i < data.length; i ++) {
                 var table =  document.getElementById("rList");
                 let row = table.insertRow(0);
@@ -24,8 +25,17 @@ function getRequest(){
                 let state =  row.insertCell(2);
                 let issued =  row.insertCell(3);
                 let auth =   row.insertCell(4);
-               
 
+                //add check box selecting in future iterations
+                /*let checkbox = document.createElement('input');
+                checkbox.type = "checkbox"; 
+                checkbox.name = "name"; 
+                checkbox.value = "value"; 
+                checkbox.id = counter; 
+                
+                row.appendChild(checkbox);*/
+
+                row.setAttribute('Id', counter);
                 rId.setAttribute('scope', 'row');
                 rId.innerHTML = data[i].rId;
                 value.setAttribute('scope', 'row');
@@ -36,6 +46,7 @@ function getRequest(){
                 issued.innerHTML = data[i].issued;
                 auth.setAttribute('scope', 'row');
                 auth.innerHTML = data[i].authDate;
+                counter ++;
                 console.log(data[i].rId);
                 
         }

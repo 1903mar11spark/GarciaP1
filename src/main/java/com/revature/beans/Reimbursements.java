@@ -97,6 +97,9 @@ public class Reimbursements {
 		this.issued = issued;
 		this.authDate = authDate;
 	}
+	public Reimbursements() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	  
