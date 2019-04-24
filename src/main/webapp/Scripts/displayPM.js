@@ -1,6 +1,6 @@
 window.onload = function() {
     getRequest();
-   
+    document.getElementById("selected").addEventListener("click", displaySingle);
     
 }
 function getRequest(){
@@ -15,7 +15,7 @@ function getRequest(){
 			
 		}
 		else{
-            console.log(data);
+            //console.log(data);
             let counter = 1;
             for (let i = 0 ; i < data.length; i ++) {
                 var table =  document.getElementById("rList");
@@ -47,9 +47,33 @@ function getRequest(){
                 auth.setAttribute('scope', 'row');
                 auth.innerHTML = data[i].authDate;
                 counter ++;
-                console.log(data[i].rId);
+               // console.log(data[i].rId);
                 
         }
     }
+    });
+}
+function displaySingle(){
+   //alert("entered the function");
+   var num = document.getElementById("inputName").value;
+    fetch("http://localhost:8084/Project1/getSingleR")
+	.then(function(response){
+	return response.json();
+	})
+	.then(function(data){
+        alert("Entered function");
+		if(data.session === null){
+			window.location = "http://localhost:8084/Project1/login";
+			
+		}
+		else{
+            //alert()
+            console.log(data);
+            document.getElementById("inputId").value = data.rId;
+            document.getElementById("inputAmount").value = data.rValue;
+            document.getElementById("inputReason").value= data.rDesc;
+           // document.getElementById("inputRecipt").innerHTML = data.rImg;
+           document.getElementById("inputState").value = data.rState;
+        }
     });
 }

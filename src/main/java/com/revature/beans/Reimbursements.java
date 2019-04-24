@@ -66,11 +66,15 @@ public class Reimbursements {
 	public void setAuthDate(String authDate) {
 		this.authDate = authDate;
 	}
+
+	
 	@Override
 	public String toString() {
-		return "Reimbursements [rId=" + rId + ", rValue=" + rValue + ", rState=" + rState + " , Issued= "+ issued + ", authDate=" + authDate + "]";
+		return "Reimbursements [rId=" + rId + ", rValue=" + rValue + ", rState=" + rState + ", rDesc=" + rDesc
+				+ ", rImg=" + rImg + ", employeeId=" + employeeId + ", issued=" + issued + ", authDate=" + authDate
+				+ ", auth=" + auth + "]";
 	}
-	/*public Reimbursements(int rId, double rValue, String rState, String rDesc, String rImg, int employeeId,
+	public Reimbursements(int rId, double rValue, String rState, String rDesc, String rImg, int employeeId,
 			int auth) {
 		super();
 		this.rId = rId;
@@ -80,7 +84,7 @@ public class Reimbursements {
 		this.rImg = rImg;
 		this.employeeId = employeeId;
 		this.auth = auth;
-	}*/
+	}
 	
 	public Reimbursements(double rValue, String rDesc, String rImg, int employeeId) {
 		super();
@@ -99,6 +103,18 @@ public class Reimbursements {
 	}
 	public Reimbursements() {
 		// TODO Auto-generated constructor stub
+	}
+	public Reimbursements(int rId, double rValue, String rState, String rDesc, String rImg, String issued, String authDate,
+			int eId, int auth) {
+		this.rId = rId;
+		this.rValue = rValue;
+		this.rState = rState;
+		this.rDesc = rDesc;
+		this.rImg = rImg;
+		this.issued = issued;
+		this.authDate = authDate;
+		this.employeeId = eId;
+		this.auth = auth;
 	}
 	
 	

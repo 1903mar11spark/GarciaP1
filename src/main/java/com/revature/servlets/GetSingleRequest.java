@@ -14,20 +14,17 @@ import javax.servlet.http.HttpSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.beans.Reimbursements;
 import com.revature.service.GetRequestA;
-import com.revature.service.RequestAService;
-import com.revature.service.UpdateRService;
 
 /**
- * Servlet implementation class GetPendingM
+ * Servlet implementation class GetSingleRequest
  */
-public class GetPendingM extends HttpServlet {
+public class GetSingleRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private GetRequestA gra = new GetRequestA();
-    UpdateRService urs = new UpdateRService();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetPendingM() {
+    public GetSingleRequest() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,31 +33,54 @@ public class GetPendingM extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-	    
+	HttpSession session = request.getSession(false);
+	 Enumeration<String> whole = request.getParameterNames();
+		PrintWriter pw = response.getWriter();
+		
+		while (whole.hasMoreElements()) {
+			 
+	            String paramName =whole.nextElement();
+	            pw.write(paramName);
+	            pw.write(":");
+	            
+	            String[] paramValues = request.getParameterValues(paramName);
+	            for (int i = 0; i < paramValues.length; i++) {
+	                String paramValue = paramValues[i];
+	                System.out.println(" "+ paramValue);
+	                pw.write(" " + paramValue);
+	                pw.write(" ");
+	                
+	            }
+	 
+	        }
+		
     	if (session != null) {
     		try {
-    			String eId = (String) session.getAttribute("userId");
-    			//System.out.println((String) session.getAttribute("userId"));
-    				int idE = Integer.parseInt(eId);
-    				List<Reimbursements> requests =  gra.getEmployeeId(idE);
+    			String rId = request.getParameter("reqId");
+    				int idE = Integer.parseInt(rId);
+    				//System.out.println(idE);
+    				
+    				Reimbursements requests = gra.getOneR(idE);
     				
     				response.getWriter().write((new ObjectMapper()).writeValueAsString(requests)); 
     				//System.out.println((new ObjectMapper()).writeValueAsString(requests));
     				
     			} catch (Exception e) {
     				e.printStackTrace();
-    				response.getWriter().write("{\"session\":null}");
+    				response.getWriter().write("Invalid request Id");
     			}
     		} else {
     		response.getWriter().write("{\"session\":null}");
     		}
+    		
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-}
 
+}
