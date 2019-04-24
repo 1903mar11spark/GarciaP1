@@ -85,9 +85,9 @@
                                 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                          <form action = http://localhost:8084/Project1/getSingleR method = "GET">
+                                          <form>
                                             <label for="inputName">Request Id</label>
-                                            <input type="text" class="form-control" id="inputName" name = "reqId" placeholder="Request Id">
+                                            <input type="text" class="form-control" id="inputName" placeholder="Request Id">
                                             <br>
                                             <button type="button" id = "selected" class="btn btn-primary" >Manage this request</button>
                                             </form>
@@ -114,15 +114,15 @@
                                 </div>
 
                                 <div class="col-sm-6 col-md-6 well" id="content">
-                                        <form method ="POST">
+                                        <form action ="http://localhost:8084/Project1/manageRM" method ="POST">
                                             <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                             <label for="inputId">Reimbursement Id: </label>
-                                                            <h3 id="inputId">###</h3>
+                                                            <input id="inputId" name="rId" placeholder="Reimbursement Id">
                                                         </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputAmount">Amount</label>
-                                                    <h3 id="inputAmount">$00.00</h3> 
+                                                    <label for="inputAmount">Amount </label>
+                                                    <<h3 id="inputAmount">$00.00</h3> 
                                                 </div>
                                                 <div class="form-group col-md-12">
                                                         <label for="inputReason">Purpose</label>
@@ -132,7 +132,7 @@
                                                         <label for="inputRecipt">Recipt</label>
                                                        <img src="" alt="Recipt" height="42" width="42">
                                                 </div>
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-12">
                                                         <label for="inputState">Status</label>
                                                         <select id="inputState" name = "rState"class="form-control">
                                                           <option selected>Choose status</option>

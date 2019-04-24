@@ -181,4 +181,34 @@
     <servlet-name>UpdateR</servlet-name>
     <url-pattern>/updateR</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestHRServlet</display-name>
+    <servlet-name>RequestHRServlet</servlet-name>
+    <servlet-class>com.revature.servlets.RequestHRServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestHRServlet</servlet-name>
+    <url-pattern>/requestHR</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateHR</display-name>
+    <servlet-name>UpdateHR</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateHR</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateHR</servlet-name>
+    <url-pattern>/updateHR</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetSingleEmployeeServlet</display-name>
+    <servlet-name>GetSingleEmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.GetSingleEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSingleEmployeeServlet</servlet-name>
+    <url-pattern>/getSingleE</url-pattern>
+  </servlet-mapping>
 </web-app>

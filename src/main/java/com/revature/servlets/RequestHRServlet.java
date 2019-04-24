@@ -1,28 +1,25 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Enumeration;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.revature.service.RequestAService;
 import com.revature.beans.Reimbursements;
+import com.revature.service.RequestAService;
 
 /**
- * Servlet implementation class RequestA
+ * Servlet implementation class RequestHRServlet
  */
-public class RequestA extends HttpServlet {
+public class RequestHRServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private RequestAService ra = new RequestAService();
+	 private RequestAService ra = new RequestAService();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RequestA() {
+    public RequestHRServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +28,7 @@ public class RequestA extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("RequestA.html").forward(request, response);
+		request.getRequestDispatcher("RequestHR.html").forward(request, response);
 	}
 
 	/**
@@ -48,13 +45,12 @@ public class RequestA extends HttpServlet {
 		int idE = Integer.parseInt(eId);
 		Reimbursements reim = new Reimbursements(amount, desc, img, idE);
 		String result = ra.requestA(reim);
+		System.out.println(result);
 		if(result !="") {
-			response.sendRedirect("requestA");
+			response.sendRedirect("requestHR");
 		}else {
 			//show alert employee was sucessfully been created
-			response.sendRedirect("requestA");
-		}
-		
+			response.sendRedirect("requestHR");
 	}
-
+	}
 }
