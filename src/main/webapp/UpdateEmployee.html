@@ -11,8 +11,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="nav.js"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
+        <script src="./Scripts/getEmployeeHR.js"></script>
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+   
     <body>
         <div id="throbber" style="display:none; min-height:120px;"></div>
         <div id="noty-holder"></div>
@@ -36,13 +37,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
                         <ul class="dropdown-menu">
-                            <li>/li>
+                            <li></li>
                             <li class="divider"></li>
                             <li></li>
                         </ul>
                     </li>
-                    </ul>
-                    
+                    </ul> 
                 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
@@ -110,135 +110,159 @@
                             <input type = "submit" id="logout" name ="logout" value = "Log out">
                             </form>
                         </li>
-                            </ul>
                         </form>
+                    </ul>
                 </div>
-            
+            </nav>
+
                 <div id="page-wrapper">
-                    <h2>Search employee by Id to update information</h2>
                     <div class="container-fluid">
                         <!-- Page Heading -->
                         <div class="row" id="main" >
-                                <div class="col-sm-12 col-md-12 well" id="content">
-                        <form class="form-inline" method = "POST">
-                                <label class="sr-only" for="inlineFormInputName2">EmployeeId</label>
-                                <input type="text" class="form-control mb-2 mr-sm-2" id="eId" name = "eIds" placeholder="Employee Id">
-                                <br>
-                                <button type="button" id = "selected" class="btn btn-primary" >Manage this request</button>
-                              </form>
-                            </div>
-                        </div>
-                        <div class="row" id="main" >
-                            <div class="col-sm-12 col-md-12 well" id="content">
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputName">First Name</label>
-                                            <input type="text" class="form-control" id="inputName" placeholder="First Name">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="inputLastN">Last Name</label>
-                                                <input type="text" class="form-control" id="inputLastN" placeholder="Last Name">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="exampleFormControlSelect1">Title</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Associate</option>
-                                                    <option>Manager</option>
-                                                    <option>HR</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="inputDepartment">Department</label>
-                                                <input type="text" class="form-control" id="inputDepartment" placeholder="Department">
-                                        </div>
-                                         <div class="form-group col-md-6">
-                                                <label for="inputPhone">Phone</label>
-                                                <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                                <label for="inputDOB">Date of Birth</label>
-                                                <input type="date" class="form-control" id="inputDOB">
-                                                </div>
-                                        <div class="form-group col-md-3">
-                                                <label for="inputHire">Hire Date</label>
-                                                <input type="date" class="form-control" id="inputHire">
-                                        </div>
-                                        </div>
-                                      <div class="form-group">
-                                        <label for="inputAddress">Address</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                          <label for="inputCity">City</label>
-                                          <input type="text" class="form-control" id="inputCity">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                          <label for="inputState">State</label>
-                                          <select id="inputState" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>AK</option>
-                                            <option>AL</option>
-                                            <option>AZ</option>
-                                            <option>AR</option>
-                                            <option>CA</option>
-                                            <option>CO</option>
-                                            <option>CT</option>
-                                            <option>DE</option>
-                                            <option>FL</option>
-                                            <option>GA</option>
-                                            <option>HI</option>
-                                            <option>ID</option>
-                                            <option>IL</option>
-                                            <option>IN</option>
-                                            <option>IA</option>
-                                            <option>KS</option>
-                                            <option>KY</option>
-                                            <option>LA</option>
-                                            <option>ME</option>
-                                            <option>MD</option>
-                                            <option>MA</option>
-                                            <option>MI</option>
-                                            <option>MN</option>
-                                            <option>MS</option>
-                                            <option>MO</option>
-                                            <option>MT</option>
-                                            <option>NE</option>
-                                            <option>NV</option>
-                                            <option>NH</option>
-                                            <option>NJ</option>
-                                            <option>NM</option>
-                                            <option>NY</option>
-                                            <option>NC</option>
-                                            <option>ND</option>
-                                            <option>OH</option>
-                                            <option>OK</option>
-                                            <option>OR</option>
-                                            <option>PA</option>
-                                            <option>RI</option>
-                                            <option>SC</option>
-                                            <option>SD</option>
-                                            <option>TN</option>
-                                            <option>TX</option>
-                                            <option>UT</option>
-                                            <option>VT</option>
-                                            <option>VA</option>
-                                            <option>WA</option>
-                                            <option>WV</option>
-                                            <option>WI</option>
-                                            <option>WY</option>
-                                          </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputZip">Zip</label>
-                                          <input type="text" class="form-control" id="inputZip">
-                                        </div>
-                                      </div>
-                                     
-                                      <button type="submit" class="btn btn-primary">Submit</button>
+                        <h3>Search employee by Id to update information</h3>
+                        <div class="col-sm-6 col-md-6well" id="content"> 
 
-                                </form>
+                                <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <form>
+                                        <label for="eId">EmployeeId</label>
+                                        <input type="text" class="form-control" id="eId" name = "eIds" placeholder="Employee Id">
+                                        <br>
+                                        <button type="button" id = "selected" class="btn btn-primary" >select</button>
+                                    </form>
+                                </div>
+                                <div>
+                                            <table id = reList class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                <th scope="col">Employee Id</th>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Department</th>
+                                            </tr>
+                                            </thead>
+                                        
+                                            <tbody id = rList class="table table-hover">
+                                                
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+
+                                            <div class="col-sm-6 col-md-6well" id="content"> 
+                                                <form action ="http://localhost:8084/Project1/updateEmployee" method ="POST">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputName">First Name</label>
+                                                            <input type="text" class="form-control" id="inputName" name = "fname" placeholder="First Name">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="inputLastN">Last Name</label>
+                                                                <input type="text" class="form-control" id="inputLastN" name ="lname" placeholder="Last Name">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="exampleFormControlSelect1">Title</label>
+                                                                <select class="form-control" id="exampleFormControlSelect1" name = "title">
+                                                                    <option>Associate</option>
+                                                                    <option>Manager</option>
+                                                                    <option>HR</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="inputDepartment">Department</label>
+                                                                <input type="text" class="form-control" id="inputDepartment" name = "subordinate" placeholder="Department">
+                                                        </div>
+                                                         <div class="form-group col-md-6">
+                                                                <label for="inputPhone">Phone</label>
+                                                                <input type="text" class="form-control" id="inputPhone" name = "phone" placeholder="Phone">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                                <label for="inputDOB">Date of Birth</label>
+                                                                <input type="date" class="form-control" id="inputDOB" name = "dob">
+                                                                </div>
+                                                        <div class="form-group col-md-3">
+                                                                <label for="inputHire">Hire Date</label>
+                                                                <input type="date" class="form-control" id="inputHire" name = "hire">
+                                                        </div>
+                                                        </div>
+                                                      <div class="form-group">
+                                                        <label for="inputAddress">Address</label>
+                                                        <input type="text" class="form-control" id="inputAddress" name = "address" placeholder="1234 Main St">
+                                                      </div>
+                                                      <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                          <label for="inputCity">City</label>
+                                                          <input type="text" class="form-control" id="inputCity" name = "city">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                          <label for="inputState">State</label>
+                                                          <select id="inputState" class="form-control" name ="state">
+                                                            <option selected>Choose...</option>
+                                                            <option>AK</option>
+                                                            <option>AL</option>
+                                                            <option>AZ</option>
+                                                            <option>AR</option>
+                                                            <option>CA</option>
+                                                            <option>CO</option>
+                                                            <option>CT</option>
+                                                            <option>DE</option>
+                                                            <option>FL</option>
+                                                            <option>GA</option>
+                                                            <option>HI</option>
+                                                            <option>ID</option>
+                                                            <option>IL</option>
+                                                            <option>IN</option>
+                                                            <option>IA</option>
+                                                            <option>KS</option>
+                                                            <option>KY</option>
+                                                            <option>LA</option>
+                                                            <option>ME</option>
+                                                            <option>MD</option>
+                                                            <option>MA</option>
+                                                            <option>MI</option>
+                                                            <option>MN</option>
+                                                            <option>MS</option>
+                                                            <option>MO</option>
+                                                            <option>MT</option>
+                                                            <option>NE</option>
+                                                            <option>NV</option>
+                                                            <option>NH</option>
+                                                            <option>NJ</option>
+                                                            <option>NM</option>
+                                                            <option>NY</option>
+                                                            <option>NC</option>
+                                                            <option>ND</option>
+                                                            <option>OH</option>
+                                                            <option>OK</option>
+                                                            <option>OR</option>
+                                                            <option>PA</option>
+                                                            <option>RI</option>
+                                                            <option>SC</option>
+                                                            <option>SD</option>
+                                                            <option>TN</option>
+                                                            <option>TX</option>
+                                                            <option>UT</option>
+                                                            <option>VT</option>
+                                                            <option>VA</option>
+                                                            <option>WA</option>
+                                                            <option>WV</option>
+                                                            <option>WI</option>
+                                                            <option>WY</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                          <label for="inputZip">Zip</label>
+                                                          <input type="text" class="form-control" id="inputZip" name="zip">
+                                                        </div>
+                                                      </div>
+                                                     
+                                                      <button type="submit" class="btn btn-primary">Submit</button>
+                
+                                                </form>
+                                    </div>
+                        </div>
+                       
                             </div>
                         </div>
                         <!-- /.row -->

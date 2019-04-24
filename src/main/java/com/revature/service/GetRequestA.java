@@ -95,4 +95,30 @@ public class GetRequestA {
 		return rem;
 		
 	}
+	
+	public List<Reimbursements> getAll(){
+		List<Reimbursements> li = new ArrayList<Reimbursements>();
+		try (Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM REIMBURSEMENTS";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			ResultSet rs= pstmt.executeQuery();
+			while (rs.next()) {
+				int rId = rs.getInt("R_ID");
+				double value = rs.getDouble("R_VALUE");
+				String state = rs.getString("R_STATE");
+				String issued = rs.getString("R_CREATION");
+				String auth = rs.getString("R_AUTH_DATE");
+				int authby = rs.getInt("AUTH_BY");
+				li.add(new Reimbursements (rId, value, state, issued, auth, authby));
+				//System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return li;
+		
+	}
 }

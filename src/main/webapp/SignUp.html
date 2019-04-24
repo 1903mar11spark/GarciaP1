@@ -8,23 +8,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="Styles/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
     </head>
     <body>
         <div id="parent">
-        <form action = "login" method="post" class="form-signin">
+        <form action = "signUp" method="post" class="form-signin">
       <img class="mb-4" src="Styles/logo2.0.png" alt="" width="300" height="100">
       <h1 class="h3 mb-3 font-weight-normal">Sign up with employee id</h1>
       <label for="inputEID" class="sr-only">Employee Id</label>
-      <input type="text" id="inputEID" class="form-control" placeholder="Employee id" required="" autofocus="">
+      <input type="text" id="inputEID" name = "id" class="form-control" placeholder="Employee id" required="" autofocus="">
       <br>
       <label for="inputUser" class="sr-only">Username</label>
-      <input type="text" id="inputUser" class="form-control" placeholder="Username" required="" autofocus="">
+      <input type="text" id="inputUser" name ="username" class="form-control" placeholder="Username" required="" autofocus="">
       <br>
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      <input type="password" id="inputPassword" name = "password" class="form-control" placeholder="Password" required="">
       <br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
       <p class="mt-5 mb-3 text-muted">Organization XIII Inc. 2019</p>
+      
     </form>
     </div>
     </body>

@@ -16,7 +16,7 @@ function getRequest(){
 		}
 		else{
             console.log(data);
-          
+                document.getElementById("eId").value = data.employeeId;
                 document.getElementById("inputName").value = data.firstName;
                 document.getElementById("inputLastN").value = data.lastName;
                 document.getElementById("inputAddress").value = data.address;

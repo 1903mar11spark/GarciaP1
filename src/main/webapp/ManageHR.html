@@ -10,9 +10,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="nav.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="Styles/Dashboard2.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
+        <script src="./Scripts/displayHR.js"></script>
+       
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
     <body>
             <div id="throbber" style="display:none; min-height:120px;"></div>
             <div id="noty-holder"></div>
@@ -31,64 +32,170 @@
                             <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
                         </a>
                     </div>
-                    <!-- Top Menu Items -->
-                    <ul class="nav navbar-right top-nav">       
+                   <!-- Top Menu Items -->
+                   <ul class="nav navbar-right top-nav">       
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="fa fa-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                <li>/li>
                                 <li class="divider"></li>
-                                <li><a href="Login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                <li></li>
                             </ul>
                         </li>
-                    </ul>
+                        </ul>
+                        
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
+                            <br>
                             <li>
-                                <a href="RequestHR.html"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</a>
+                                <h4>Requests</h4>
                             </li>
                             <li>
-                                <a href="ManageHR.html"><i class="fa fa-fw fa-question-circle"></i> Manage Request</a>
+                                <form action = http://localhost:8084/Project1/requestHR>
+                                <input type = "submit" id="requestM" name ="requestM" value = "Create Request"> 
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/manageRH>
+                                <input type = "submit" id="requestM" name ="manageM" value = "Manage Request"> 
+                                </form>
+                                </li>
+                            <br>
+                            <li>
+                                <h4>Employee Management</h4>
                             </li>
                             <li>
-                            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-user-plus"></i> Employees<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                            <ul id="submenu-1" class="collapse">
-                                <li><a href="addUser.html"><i class="fa fa-angle-double-right"></i> Add</a></li>
-                                <li><a href="UpdateEmployee.html"><i class="fa fa-angle-double-right"></i> Update</a></li>
-                                <li><a href="DeleteEmployee.html"><i class="fa fa-angle-double-right"></i> Delete</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                                <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-book"></i> Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                <ul id="submenu-2" class="collapse">
-                                    <li><a href="UpdateUser.html"><i class="fa fa-angle-double-right"></i> Update Users</a></li>
-                                    <li><a href="DeleteUser.html"><i class="fa fa-angle-double-right"></i> Delete Users</a></li>
+                                <form action = http://localhost:8084/Project1/updateHR>
+                                <input type = "submit" id="updateM" name ="updateM" value = "Update Profile">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/addEmployee>
+                                <input type = "submit" id="add" name ="add" value = "New Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateEmployee>
+                                <input type = "submit" id="update" name ="update" value = "Update Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteEmployee>
+                                <input type = "submit" id="delete" name ="delete" value = "Delete Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <h4>User Management</h4>
+                            </li>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateUser>
+                                <input type = "submit" id="updateU" name ="updateU" value = "Update User">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteUser>
+                                <input type = "submit" id="deleteU" name ="deleteU" value = "Delete User">
+                                </form>
+                            </li>
+                            <br>
+
+                            <li>
+                                <form action = http://localhost:8084/Project1/logout>
+                                <input type = "submit" id="logout" name ="logout" value = "Log out">
+                                </form>
+                            </li>
                                 </ul>
-                            </li>
-                           
-                        </ul>
+                            </form>
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
-            
                 <div id="page-wrapper">
-                    <div class="container-fluid">
-                        <!-- Page Heading -->
-                        <div class="row" id="main" >
-                            <div class="col-sm-12 col-md-12 well" id="content">
-                                <h3>Request go here</h3>
+                        <div class="container-fluid">
+                            <!-- Page Heading -->
+                            <div class="row" id="main" >
+                                <h3>Manage Request</h3>
+                                <div class="col-sm-6 col-md-6well" id="content"> 
+                                    
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                              <form>
+                                                <label for="inputName">Request Id</label>
+                                                <input type="text" class="form-control" id="inputName" placeholder="Request Id">
+                                                <br>
+                                                <button type="button" id = "selected" class="btn btn-primary" >Manage this request</button>
+                                                </form>
+                                            </div>
+                                            <div>
+                                                <table id = reList class="table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                    <th scope="col">Request Id</th>
+                                                    <th scope="col">Request Value</th>
+                                                    <th scope="col">Request Status</th>
+                                                    <th scope="col">Request Issued</th>
+                                                    <th scope="col">Request Auth Date</th>
+                                                    <th scope="col">Auth by</th>
+                                                </tr>
+                                                </thead>
+                                            
+                                                <tbody id = rList class="table table-hover">
+                                                    
+                                                </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+    
+                                    <div class="col-sm-6 col-md-6 well" id="content">
+                                            <form action ="http://localhost:8084/Project1/manageHR" method ="POST">
+                                                <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                                <label for="inputId">Reimbursement Id: </label>
+                                                                <input id="inputId" name="rId" placeholder="Reimbursement Id">
+                                                            </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="inputAmount"> Amount </label>
+                                                        <<h3 id="inputAmount">$00.00</h3> 
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                            <label for="inputReason">Purpose</label>
+                                                            <h3 id="inputReason">Text here</h3>
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                            <label for="inputRecipt">Recipt</label>
+                                                           <img src="" alt="Recipt" height="42" width="42">
+                                                    </div>
+                                                    <div class="form-group col-md-12">
+                                                            <label for="inputState">Status</label>
+                                                            <select id="inputState" name = "rState"class="form-control">
+                                                              <option selected>Choose status</option>
+                                                              <option>Aproved</option>
+                                                              <option>Rejected</option>
+                                                            </select>
+                                                        </div>
+                                                </div>
+                                                <br>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            </form>
+                                            
+                                        </div>
+                                </div>
+                                <!-- /.row -->
                             </div>
+                            <!-- /.container-fluid -->
                         </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container-fluid -->
-                </div>
-                <!-- /#page-wrapper -->
-            </div><!-- /#wrapper -->
-   
-            
-    </body>
-
-</html>
+                        <!-- /#page-wrapper -->
+                    </div><!-- /#wrapper -->
+                  
+                
+        </body>
+    
+    </html>

@@ -211,4 +211,54 @@
     <servlet-name>GetSingleEmployeeServlet</servlet-name>
     <url-pattern>/getSingleE</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>getAllEmployeeServlet</display-name>
+    <servlet-name>getAllEmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.getAllEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getAllEmployeeServlet</servlet-name>
+    <url-pattern>/getAllEmp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteEmployee</display-name>
+    <servlet-name>DeleteEmployee</servlet-name>
+    <servlet-class>com.revature.servlets.DeleteEmployee</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteEmployee</servlet-name>
+    <url-pattern>/deleteEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SignUpServlet</display-name>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.revature.servlets.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/signUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageRRH</display-name>
+    <servlet-name>ManageRRH</servlet-name>
+    <servlet-class>com.revature.servlets.ManageRRH</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageRRH</servlet-name>
+    <url-pattern>/manageRH</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllPending</display-name>
+    <servlet-name>GetAllPending</servlet-name>
+    <servlet-class>com.revature.servlets.GetAllPending</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllPending</servlet-name>
+    <url-pattern>/getAllReq</url-pattern>
+  </servlet-mapping>
 </web-app>

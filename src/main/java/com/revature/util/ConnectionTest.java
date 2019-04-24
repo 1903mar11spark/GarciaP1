@@ -12,9 +12,11 @@ import com.revature.beans.Reimbursements;
 import com.revature.dao.CompanyDAO;
 import com.revature.dao.CompanyDAOImpl;
 import com.revature.service.AuthService;
+import com.revature.service.DeleteEmployeeService;
 import com.revature.service.GetRequestA;
 import com.revature.service.NewEmployee;
 import com.revature.service.RequestAService;
+import com.revature.service.SignUpService;
 import com.revature.service.UpdateAService;
 import com.revature.service.UpdateRService;
 
@@ -34,6 +36,8 @@ public class ConnectionTest {
 		GetRequestA gra = new GetRequestA();
 		String result="";
 		  UpdateRService urs = new UpdateRService();
+		  DeleteEmployeeService del = new DeleteEmployeeService();
+		SignUpService si = new SignUpService();
 		//CompanyDAO bd2 = new CompanyDAOImpl();
 		
 	/*	Scanner uInput = new Scanner(System.in);
@@ -67,7 +71,10 @@ public class ConnectionTest {
 		String state = "Aproved";
 		int rId = 21;
 		result = urs.updateRequest(state, rId);
-		System.out.println(result);*/
+
+		result = del.DeleteEmployee(24);*/
+		result = si.idExists(14, "Xion", "pass");
+		System.out.println(result);
 	}
 
 }

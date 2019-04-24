@@ -30,7 +30,7 @@ public class GetEmployeeAService {
 				String city = rs.getString("CITY");
 				String state = rs.getString("STATE_E");
 				String zip = rs.getString("ZIP");
-				emp = new Employee(fName,lName,address, phone, dob, city, state, zip);
+				emp = new Employee(eId,fName,lName,address, phone, dob, city, state, zip);
 				//System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
 			}
 		} catch (SQLException e) {
