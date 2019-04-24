@@ -34,7 +34,7 @@ public class GetSingleRequest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	HttpSession session = request.getSession(false);
-	 Enumeration<String> whole = request.getParameterNames();
+	/* Enumeration<String> whole = request.getParameterNames();
 		PrintWriter pw = response.getWriter();
 		
 		while (whole.hasMoreElements()) {
@@ -52,13 +52,13 @@ public class GetSingleRequest extends HttpServlet {
 	                
 	            }
 	 
-	        }
+	        }*/
 		
     	if (session != null) {
     		try {
     			String rId = request.getParameter("reqId");
     				int idE = Integer.parseInt(rId);
-    				//System.out.println(idE);
+    				System.out.println(idE);
     				
     				Reimbursements requests = gra.getOneR(idE);
     				

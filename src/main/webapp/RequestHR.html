@@ -3,16 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Request Reimbursment</title>
+        <title>Dashboard</title>
         <link rel="icon" type="image/ico" href="Styles/icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="nav.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="Styles/Dashboard2.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
+        <script src="./Scripts/displayRM.js"></script>
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+
     <body>
             <div id="throbber" style="display:none; min-height:120px;"></div>
             <div id="noty-holder"></div>
@@ -31,44 +32,87 @@
                             <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
                         </a>
                     </div>
-                    <!-- Top Menu Items -->
-                    <ul class="nav navbar-right top-nav">       
+                   <!-- Top Menu Items -->
+                   <ul class="nav navbar-right top-nav">       
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="fa fa-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                <li>/li>
                                 <li class="divider"></li>
-                                <li><a href="Login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                <li></li>
                             </ul>
                         </li>
-                    </ul>
+                        </ul>
+                        
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav side-nav">
+                            <br>
                             <li>
-                                <a href="RequestHR.html"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</a>
+                                <h4>Requests</h4>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-question-circle"></i> Manage Request</a>
+                                <form action = http://localhost:8084/Project1/requestHR>
+                                <input type = "submit" id="requestHR" name ="requestHR" value = "Create Request"> 
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/manageRHR>
+                                <input type = "submit" id="requestM" name ="manageM" value = "Manage Request"> 
+                                </form>
+                                </li>
+                            <br>
+                            <li>
+                                <h4>Employee Management</h4>
                             </li>
                             <li>
-                            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-user-plus"></i> Employees<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                            <ul id="submenu-1" class="collapse">
-                                <li><a href="addUser.html"><i class="fa fa-angle-double-right"></i> Add</a></li>
-                                <li><a href="UpdateEmployee.html"><i class="fa fa-angle-double-right"></i> Update</a></li>
-                                <li><a href="DeleteEmployee.html"><i class="fa fa-angle-double-right"></i> Delete</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                                <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-book"></i> Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                <ul id="submenu-2" class="collapse">
-                                    <li><a href="UpdateUser.html"><i class="fa fa-angle-double-right"></i> Update Users</a></li>
-                                    <li><a href="DeleteUser.html"><i class="fa fa-angle-double-right"></i> Delete Users</a></li>
+                                <form action = http://localhost:8084/Project1/updateHR>
+                                <input type = "submit" id="updateM" name ="updateM" value = "Update Profile">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/addEmployee>
+                                <input type = "submit" id="add" name ="add" value = "New Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateEmployee>
+                                <input type = "submit" id="update" name ="update" value = "Update Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteEmployee>
+                                <input type = "submit" id="delete" name ="delete" value = "Delete Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <h4>User Management</h4>
+                            </li>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateUser>
+                                <input type = "submit" id="updateU" name ="updateU" value = "Update User">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteUser>
+                                <input type = "submit" id="deleteU" name ="deleteU" value = "Delete User">
+                                </form>
+                            </li>
+                            <br>
+
+                            <li>
+                                <form action = http://localhost:8084/Project1/logout>
+                                <input type = "submit" id="logout" name ="logout" value = "Log out">
+                                </form>
+                            </li>
                                 </ul>
-                            </li>
-                           
-                        </ul>
+                            </form>
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
@@ -79,21 +123,22 @@
                         <!-- Page Heading -->
                         <div class="row" id="main" >
                             <div class="col-sm-12 col-md-12 well" id="content">
-                                <form>
+                                <form action ="requestHR" method="post">
                                     <div class="form-row">
                                         <div class="form-group col-md-2">
                                             <label for="inputAmount">Amount</label>
-                                            <input type="number" class="form-control" id="inputAmount" placeholder="Amount requested">
+                                            <input type="number" class="form-control" id="inputAmount" name = "amount" placeholder="Amount requested">
                                         </div>
                                         <div class="form-group col-md-12">
                                                 <label for="inputReason">Purpose</label>
-                                                <textarea class="form-control" rows="5" id="inputReason"></textarea>
+                                                <textarea class="form-control" rows="5" id="inputReason" name="desc"></textarea>
                                         </div>
                                         <div class="form-group col-md-6">
                                                 <label for="inputRecipt">Recipt</label>
-                                                <input type="file" name="inputRecipt" accept="image/*">
+                                                <input id ="file-type" type="file" name="inputRecipt" accept="image/*" onchange=""/>
+                                                
                                                 <br>
-                                                <button type="submit" class="btn btn-primary">Update</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                         </div>
                                         
                                     </div>

@@ -43,6 +43,7 @@ public class RequestAService {
 			ResultSet rs= pstmt.executeQuery();
 			result = "Request was succesfully been created";
 		} catch (SQLException e) {
+			result = "Request failed";
 			e.printStackTrace();
 		}
 		

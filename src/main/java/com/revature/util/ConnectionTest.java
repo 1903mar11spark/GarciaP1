@@ -62,12 +62,12 @@ public class ConnectionTest {
 		System.out.println(result);
 		
 		Reimbursements requests = gra.getOneR(21);
-		System.out.println((new ObjectMapper()).writeValueAsString(requests));*/
+		System.out.println((new ObjectMapper()).writeValueAsString(requests));
 		
 		String state = "Aproved";
 		int rId = 21;
 		result = urs.updateRequest(state, rId);
-		System.out.println(result);
+		System.out.println(result);*/
 	}
 
 }

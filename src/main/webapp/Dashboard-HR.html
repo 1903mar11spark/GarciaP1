@@ -10,9 +10,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="nav.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="Styles/Dashboard2.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
+        <script src="./Scripts/displayRM.js"></script>
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
     <body>
             <div id="throbber" style="display:none; min-height:120px;"></div>
             <div id="noty-holder"></div>
@@ -31,11 +31,10 @@
                             <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
                         </a>
                     </div>
-                    <!-- Top Menu Items -->
                    <!-- Top Menu Items -->
                    <ul class="nav navbar-right top-nav">       
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" >User <b class="fa fa-angle-down"></b></a>
+                            <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
                             <ul class="dropdown-menu">
                                 <li>/li>
                                 <li class="divider"></li>
@@ -49,47 +48,68 @@
                         <ul class="nav navbar-nav side-nav">
                             <br>
                             <li>
-                                <form action = http://localhost:8084/Project1/requestM>
+                                <h4>Requests</h4>
+                            </li>
+                            <li>
+                                <form action = http://localhost:8084/Project1/requestHR>
                                 <input type = "submit" id="requestM" name ="requestM" value = "Create Request"> 
                                 </form>
                             </li>
                             <br>
                             <li>
-                                <form action = http://localhost:8084/Project1/manageRM>
-                                <input type = "submit" id="requestM" name ="requestM" value = "Create Request"> 
+                                <form action = http://localhost:8084/Project1/manageRHR>
+                                <input type = "submit" id="requestM" name ="manageM" value = "Manage Request"> 
                                 </form>
                                 </li>
                             <br>
                             <li>
-                                <form action = http://localhost:8084/Project1/updateM>
+                                <h4>Employee Management</h4>
+                            </li>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateHR>
                                 <input type = "submit" id="updateM" name ="updateM" value = "Update Profile">
                                 </form>
                             </li>
                             <br>
                             <li>
+                                <form action = http://localhost:8084/Project1/addEmployee>
+                                <input type = "submit" id="add" name ="add" value = "New Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateEmployee>
+                                <input type = "submit" id="update" name ="update" value = "Update Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteEmployee>
+                                <input type = "submit" id="delete" name ="delete" value = "Delete Employee">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <h4>User Management</h4>
+                            </li>
+                            <li>
+                                <form action = http://localhost:8084/Project1/updateUser>
+                                <input type = "submit" id="updateU" name ="updateU" value = "Update User">
+                                </form>
+                            </li>
+                            <br>
+                            <li>
+                                <form action = http://localhost:8084/Project1/deleteUser>
+                                <input type = "submit" id="deleteU" name ="deleteU" value = "Delete User">
+                                </form>
+                            </li>
+                            <br>
+
+                            <li>
                                 <form action = http://localhost:8084/Project1/logout>
                                 <input type = "submit" id="logout" name ="logout" value = "Log out">
                                 </form>
                             </li>
-                            <li>
-                                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-user-plus"></i> Employees<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                    <form action="DashboardHR" method="POST"></form>
-                                    <ul id="submenu-1" class="collapse">  
-                                        <li> <button type="submit" name = "add" value ="dashboardHR" class="fa fa-angle-double-right">Add</button>></li>
-                                        <li><a href="UpdateEmployee.html"><i class="fa fa-angle-double-right"></i> Update</a></li>
-                                        <li><a href="DeleteEmployee.html"><i class="fa fa-angle-double-right"></i> Delete</a></li>
-                                  
-                                    </ul>
-                                </form>
-                                </li>
-                                <li>
-                                        <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-book"></i> Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                        <ul id="submenu-2" class="collapse">
-                                            <li><a href="UpdateUser.html"><i class="fa fa-angle-double-right"></i> Update Users</a></li>
-                                            <li><a href="DeleteUser.html"><i class="fa fa-angle-double-right"></i> Delete Users</a></li>
-                                        </ul>
-                                    </li>
-                                   
                                 </ul>
                             </form>
                     </div>
@@ -101,7 +121,24 @@
                         <!-- Page Heading -->
                         <div class="row" id="main" >
                             <div class="col-sm-12 col-md-12 well" id="content">
-                                <h3>Request go here</h3>
+                                    <form action="dashboardAs" method="GET">
+                                            <h3>Reimbursement Requests:</h3>
+                                    </form>
+                                    <table id = reList class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                        <th scope="col">Request Id</th>
+                                        <th scope="col">Request Value</th>
+                                        <th scope="col">Request Status</th>
+                                        <th scope="col">Request Issued</th>
+                                        <th scope="col">Request Auth Date</th>
+                                    </tr>
+                                    </thead>
+                                
+                                    <tbody id = rList class="table table-hover">
+                                        
+                                    </tbody>
+                                    </table>
                             </div>
                         </div>
                         <!-- /.row -->
