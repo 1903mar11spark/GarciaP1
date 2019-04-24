@@ -29,7 +29,7 @@ public class GetRequestA {
 				String issued = rs.getString("R_CREATION");
 				String auth = rs.getString("R_AUTH_DATE");
 				li.add(new Reimbursements (rId, value, state, issued, auth));
-				System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
+				//System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -53,7 +53,7 @@ public class GetRequestA {
 			ResultSet rs= pstmt.executeQuery();
 			while (rs.next()) {
 				int eId = rs.getInt("EMPLOYEE_ID");
-				System.out.println(eId);
+				//System.out.println(eId);
 				li = getRequests(eId);
 				display.addAll(li);
 			}
@@ -64,4 +64,35 @@ public class GetRequestA {
 		return display;
 	}
 	
+	public Reimbursements getOneR(int rIde){
+		Reimbursements rem = new Reimbursements();
+		//System.out.println(rIde);
+		try (Connection con = ConnectionUtil.getConnection()){
+			String sql = "SELECT * FROM REIMBURSEMENTS WHERE R_ID = ?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1,rIde);
+			ResultSet rs= pstmt.executeQuery();
+			while (rs.next()) {
+				int rId = rs.getInt("R_ID");
+				double value = rs.getDouble("R_VALUE");
+				String state = rs.getString("R_STATE");
+				String issued = rs.getString("R_CREATION");
+				String desc = rs.getString("R_DESC");
+				String img = "blob should go here";
+				String auth = rs.getString("R_AUTH_DATE");
+				int eId = rs.getInt("EMPLOYEE_ID");
+				int aId = rs.getInt("AUTH_BY");
+				//System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
+				rem = new Reimbursements (rId, value, state,desc, img, issued, auth, eId, aId);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("statement faailed");
+			e.printStackTrace();
+		}
+		
+		
+		return rem;
+		
+	}
 }

@@ -131,7 +131,6 @@
     <servlet-name>RequestMServlet</servlet-name>
     <url-pattern>/requestM</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <description></description>
     <display-name>GetPendingM</display-name>
@@ -151,5 +150,35 @@
   <servlet-mapping>
     <servlet-name>ManageRMServlet</servlet-name>
     <url-pattern>/manageRM</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateM</display-name>
+    <servlet-name>UpdateM</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateM</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateM</servlet-name>
+    <url-pattern>/updateM</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetSingleRequest</display-name>
+    <servlet-name>GetSingleRequest</servlet-name>
+    <servlet-class>com.revature.servlets.GetSingleRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetSingleRequest</servlet-name>
+    <url-pattern>/getSingleR</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateR</display-name>
+    <servlet-name>UpdateR</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateR</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateR</servlet-name>
+    <url-pattern>/updateR</url-pattern>
   </servlet-mapping>
 </web-app>

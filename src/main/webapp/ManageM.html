@@ -13,7 +13,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
         <script src="./Scripts/displayPM.js"></script>
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+   
     <body>
             <div id="throbber" style="display:none; min-height:120px;"></div>
             <div id="noty-holder"></div>
@@ -28,23 +28,21 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        
-                        <a class="navbar-brand" href="Dashboard-HR.html">
-                            <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
-                        </a>
+                        <a class="navbar-brand" href="#">
+                                <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
+                            </a>
                     </div>
                     <!-- Top Menu Items -->
                     <ul class="nav navbar-right top-nav">       
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" >User <b class="fa fa-angle-down"></b></a>
+                                    <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li>/li>
+                                    <li></li>
                                     <li class="divider"></li>
                                     <li></li>
                                 </ul>
                             </li>
                             </ul>
-                            
                         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                         <div class="collapse navbar-collapse navbar-ex1-collapse">
                             <ul class="nav navbar-nav side-nav">
@@ -84,14 +82,14 @@
                         <div class="row" id="main" >
                             <h3>Manage Request</h3>
                             <div class="col-sm-6 col-md-6well" id="content"> 
-                                <form>
+                                
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <form>
+                                          <form action = http://localhost:8084/Project1/getSingleR method = "GET">
                                             <label for="inputName">Request Id</label>
-                                            <input type="text" class="form-control" id="inputName" placeholder="Request Id">
+                                            <input type="text" class="form-control" id="inputName" name = "reqId" placeholder="Request Id">
                                             <br>
-                                            <button type="submit" id = "selected" class="btn btn-primary">Manage this request <button>
+                                            <button type="button" id = "selected" class="btn btn-primary" >Manage this request</button>
                                             </form>
                                         </div>
                                         <div>
@@ -112,15 +110,15 @@
                                             </table>
                                         </div>
                                     </div>
-                                    </form>
+                                  
                                 </div>
 
                                 <div class="col-sm-6 col-md-6 well" id="content">
-                                        <form>
+                                        <form method ="POST">
                                             <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                             <label for="inputId">Reimbursement Id: </label>
-                                                            <h3 id="inputAmount">###</h3>
+                                                            <h3 id="inputId">###</h3>
                                                         </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="inputAmount">Amount</label>
@@ -136,7 +134,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                         <label for="inputState">Status</label>
-                                                        <select id="inputState" class="form-control">
+                                                        <select id="inputState" name = "rState"class="form-control">
                                                           <option selected>Choose status</option>
                                                           <option>Aproved</option>
                                                           <option>Rejected</option>
