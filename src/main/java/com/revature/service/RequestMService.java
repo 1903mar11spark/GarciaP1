@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.Connection;
-//import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,9 +16,9 @@ import com.revature.beans.Reimbursements;
 import com.revature.dao.CompanyDAO;
 import com.revature.util.ConnectionUtil;
 
-public class RequestAService {
+public class RequestMService {
 
-	public String requestA(Reimbursements reim) throws FileNotFoundException {
+	public String requestM(Reimbursements reim) throws FileNotFoundException {
 		String result ="";
 		double rValue = reim.getrValue();
 		String rDesc = reim.getrDesc();
@@ -39,7 +38,7 @@ public class RequestAService {
 			pstmt.setBinaryStream(4,fin);
 			pstmt.setString(5,date);
 			pstmt.setInt(6,employeeId);
-			
+			System.out.println(rValue + rDesc + fin + date + employeeId);
 			ResultSet rs= pstmt.executeQuery();
 			result = "Request was succesfully been created";
 		} catch (SQLException e) {
@@ -48,5 +47,4 @@ public class RequestAService {
 		
 		return result;
 	}
-	
 }

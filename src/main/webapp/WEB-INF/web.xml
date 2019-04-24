@@ -131,4 +131,25 @@
     <servlet-name>RequestMServlet</servlet-name>
     <url-pattern>/requestM</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>GetPendingM</display-name>
+    <servlet-name>GetPendingM</servlet-name>
+    <servlet-class>com.revature.servlets.GetPendingM</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPendingM</servlet-name>
+    <url-pattern>/getPendingM</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageRMServlet</display-name>
+    <servlet-name>ManageRMServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ManageRMServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageRMServlet</servlet-name>
+    <url-pattern>/manageRM</url-pattern>
+  </servlet-mapping>
 </web-app>

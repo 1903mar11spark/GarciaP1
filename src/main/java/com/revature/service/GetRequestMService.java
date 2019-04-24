@@ -12,9 +12,8 @@ import java.util.List;
 import com.revature.beans.Reimbursements;
 import com.revature.util.ConnectionUtil;
 
-public class GetRequestA {
+public class GetRequestMService {
 	
-
 	public List<Reimbursements> getRequests(int userId){
 		List<Reimbursements> li = new ArrayList<Reimbursements>();
 		try (Connection con = ConnectionUtil.getConnection()){
@@ -29,7 +28,7 @@ public class GetRequestA {
 				String issued = rs.getString("R_CREATION");
 				String auth = rs.getString("R_AUTH_DATE");
 				li.add(new Reimbursements (rId, value, state, issued, auth));
-				System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
+				//System.out.println(rId + " value: " + value + " state: " + state + " issued: " + issued + " auth: " + auth);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -38,30 +37,6 @@ public class GetRequestA {
 		
 		
 		return li;
-		
 	}
 
-	public List<Reimbursements> getEmployeeId(int userId){
-		List<Reimbursements> li = new ArrayList<Reimbursements>();
-		List<Reimbursements> display = new ArrayList<Reimbursements>();
-		//get the employee list
-		//Reimbursements rem = new Reimbursements():
-		try (Connection con = ConnectionUtil.getConnection()){
-			String sql = "SELECT EMPLOYEE_ID FROM EMPLOYEE WHERE SUBORDINATE= ?";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(1,userId);
-			ResultSet rs= pstmt.executeQuery();
-			while (rs.next()) {
-				int eId = rs.getInt("EMPLOYEE_ID");
-				System.out.println(eId);
-				li = getRequests(eId);
-				display.addAll(li);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return display;
-	}
-	
 }
