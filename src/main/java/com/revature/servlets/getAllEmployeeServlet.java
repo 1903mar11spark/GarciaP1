@@ -1,6 +1,8 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,15 +15,15 @@ import com.revature.beans.Reimbursements;
 import com.revature.service.GetEmployeeService;
 
 /**
- * Servlet implementation class GetSingleEmployeeServlet
+ * Servlet implementation class getAllEmployeeServlet
  */
-public class GetSingleEmployeeServlet extends HttpServlet {
+public class getAllEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        GetEmployeeService ges = new GetEmployeeService();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetSingleEmployeeServlet() {
+    public getAllEmployeeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,21 +33,16 @@ public class GetSingleEmployeeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if (session != null) {
+	    
+    	if (session != null) {
     		try {
-    			String eId = request.getParameter("eIds");
-    				int edE = Integer.parseInt(eId);
-    				System.out.println(edE);
-    				
-    				Employee emp = ges.getSingleEmployee(edE);
-    				
-    				
-    				response.getWriter().write((new ObjectMapper()).writeValueAsString(emp)); 
+    				List<Employee> employees = ges.getAllEmployees();
+    				response.getWriter().write((new ObjectMapper()).writeValueAsString(employees)); 
     				//System.out.println((new ObjectMapper()).writeValueAsString(requests));
     				
     			} catch (Exception e) {
     				e.printStackTrace();
-    				response.getWriter().write("Invalid request Id");
+    				response.getWriter().write("{\"session\":null}");
     			}
     		} else {
     		response.getWriter().write("{\"session\":null}");

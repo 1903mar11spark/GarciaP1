@@ -116,6 +116,14 @@ public class Reimbursements {
 		this.employeeId = eId;
 		this.auth = auth;
 	}
+	public Reimbursements(int rId, double value, String state, String issued, String auth, int authby) {
+		this.rId = rId;
+		this.rValue = value;
+		this.rState = state;
+		this.issued = issued;
+		this.authDate = auth;
+		this.auth = authby;
+	}
 	
 	
 	  

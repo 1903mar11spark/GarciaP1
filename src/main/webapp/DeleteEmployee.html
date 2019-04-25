@@ -3,201 +3,271 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Delete Employee</title>
+        <title>Update Employee</title>
         <link rel="icon" type="image/ico" href="Styles/icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="nav.js"></script>
-        <link rel="stylesheet" type="text/css" media="screen" href="Styles/Dashboard2.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="dashboard.css">
+        <script src="./Scripts/getEmployeeHR.js"></script>
     </head>
-    <img class="mb-4" src="Styles/logo.png" alt="" width="200" height="50">
+   
     <body>
-            <div id="throbber" style="display:none; min-height:120px;"></div>
-            <div id="noty-holder"></div>
-            <div id="wrapper">
-                <!-- Navigation -->
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="Dashboard-HR.html">
-                            <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
-                        </a>
-                    </div>
-                    <!-- Top Menu Items -->
-                    <ul class="nav navbar-right top-nav">       
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="fa fa-angle-down"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                                <li class="divider"></li>
-                                <li><a href="Login.html"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul class="nav navbar-nav side-nav">
-                            <li>
-                                <a href="RequestHR.html"><i class="fa fa-fw fa-paper-plane-o"></i> Create Request</a>
-                            </li>
-                            <li>
-                                <a href="ManageHR.html"><i class="fa fa-fw fa-question-circle"></i> Manage Request</a>
-                            </li>
-                            <li>
-                            <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-user-plus"></i> Employees<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                            <ul id="submenu-1" class="collapse">
-                                <li><a href="addUser.html"><i class="fa fa-angle-double-right"></i> Add</a></li>
-                                <li><a href="UpdateEmployee.html"><i class="fa fa-angle-double-right"></i> Update</a></li>
-                                <li><a href="DeleteEmployee.html"><i class="fa fa-angle-double-right"></i> Delete</a></li>
-                            </ul>
+        <div id="throbber" style="display:none; min-height:120px;"></div>
+        <div id="noty-holder"></div>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Dashboard-HR.html">
+                        <img src="Styles/logo2.0.png" alt="Logo" width="200" height="50">
+                    </a>
+                </div>
+               <!-- Top Menu Items -->
+               <ul class="nav navbar-right top-nav">       
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" > <b class="fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu">
+                            <li></li>
+                            <li class="divider"></li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    </ul> 
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav side-nav">
+                        <br>
+                        <li>
+                            <h4>Requests</h4>
                         </li>
                         <li>
-                                <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-book"></i> Users<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                                <ul id="submenu-2" class="collapse">
-                                    <li><a href="UpdateUser.html"><i class="fa fa-angle-double-right"></i> Update Users</a></li>
-                                    <li><a href="DeleteUser.html"><i class="fa fa-angle-double-right"></i> Delete Users</a></li>
-                                </ul>
+                            <form action = http://localhost:8084/Project1/requestHR>
+                            <input type = "submit" id="requestM" name ="requestM" value = "Create Request"> 
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <form action = http://localhost:8084/Project1/manageHR>
+                            <input type = "submit" id="requestM" name ="manageM" value = "Manage Request"> 
+                            </form>
                             </li>
-                           
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </nav>
-            
+                        <br>
+                        <li>
+                            <h4>Employee Management</h4>
+                        </li>
+                        <li>
+                            <form action = http://localhost:8084/Project1/updateHR>
+                            <input type = "submit" id="updateM" name ="updateM" value = "Update Profile">
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <form action = http://localhost:8084/Project1/addEmployee>
+                            <input type = "submit" id="add" name ="add" value = "New Employee">
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <form action = http://localhost:8084/Project1/updateEmployee>
+                            <input type = "submit" id="update" name ="update" value = "Update Employee">
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <form action = http://localhost:8084/Project1/deleteEmployee>
+                            <input type = "submit" id="delete" name ="delete" value = "Delete Employee">
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <h4>User Management</h4>
+                        </li>
+                        <li>
+                            <form action = http://localhost:8084/Project1/updateUser>
+                            <input type = "submit" id="updateU" name ="updateU" value = "Update User">
+                            </form>
+                        </li>
+                        <br>
+                        <li>
+                            <form action = http://localhost:8084/Project1/deleteUser>
+                            <input type = "submit" id="deleteU" name ="deleteU" value = "Delete User">
+                            </form>
+                        </li>
+                        <br>
+
+                        <li>
+                            <form action = http://localhost:8084/Project1/logout>
+                            <input type = "submit" id="logout" name ="logout" value = "Log out">
+                            </form>
+                        </li>
+                        </form>
+                    </ul>
+                </div>
+            </nav>
+
                 <div id="page-wrapper">
-                    <h2>Search employee by Id to delete information</h2>
                     <div class="container-fluid">
                         <!-- Page Heading -->
                         <div class="row" id="main" >
-                                <div class="col-sm-12 col-md-12 well" id="content">
-                        <form class="form-inline">
-                                <label class="sr-only" for="inlineFormInputName2">EmployeeId</label>
-                                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Employee Id">
-                              
-                                <button type="submit" class="btn btn-primary mb-2">Search</button>
-                              </form>
-                            </div>
-                        </div>
-                        <div class="row" id="main" >
-                            <div class="col-sm-12 col-md-12 well" id="content">
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="inputName">First Name</label>
-                                            <input type="text" class="form-control" id="inputName" placeholder="First Name">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="inputLastN">Last Name</label>
-                                                <input type="text" class="form-control" id="inputLastN" placeholder="Last Name">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="exampleFormControlSelect1">Title</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>Associate</option>
-                                                    <option>Manager</option>
-                                                    <option>HR</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                                <label for="inputDepartment">Department</label>
-                                                <input type="text" class="form-control" id="inputDepartment" placeholder="Department">
-                                        </div>
-                                         <div class="form-group col-md-6">
-                                                <label for="inputPhone">Phone</label>
-                                                <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                                <label for="inputDOB">Date of Birth</label>
-                                                <input type="date" class="form-control" id="inputDOB">
-                                                </div>
-                                        <div class="form-group col-md-3">
-                                                <label for="inputHire">Hire Date</label>
-                                                <input type="date" class="form-control" id="inputHire">
-                                        </div>
-                                        </div>
-                                      <div class="form-group">
-                                        <label for="inputAddress">Address</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                      </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                          <label for="inputCity">City</label>
-                                          <input type="text" class="form-control" id="inputCity">
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                          <label for="inputState">State</label>
-                                          <select id="inputState" class="form-control">
-                                            <option selected>Choose...</option>
-                                            <option>AK</option>
-                                            <option>AL</option>
-                                            <option>AZ</option>
-                                            <option>AR</option>
-                                            <option>CA</option>
-                                            <option>CO</option>
-                                            <option>CT</option>
-                                            <option>DE</option>
-                                            <option>FL</option>
-                                            <option>GA</option>
-                                            <option>HI</option>
-                                            <option>ID</option>
-                                            <option>IL</option>
-                                            <option>IN</option>
-                                            <option>IA</option>
-                                            <option>KS</option>
-                                            <option>KY</option>
-                                            <option>LA</option>
-                                            <option>ME</option>
-                                            <option>MD</option>
-                                            <option>MA</option>
-                                            <option>MI</option>
-                                            <option>MN</option>
-                                            <option>MS</option>
-                                            <option>MO</option>
-                                            <option>MT</option>
-                                            <option>NE</option>
-                                            <option>NV</option>
-                                            <option>NH</option>
-                                            <option>NJ</option>
-                                            <option>NM</option>
-                                            <option>NY</option>
-                                            <option>NC</option>
-                                            <option>ND</option>
-                                            <option>OH</option>
-                                            <option>OK</option>
-                                            <option>OR</option>
-                                            <option>PA</option>
-                                            <option>RI</option>
-                                            <option>SC</option>
-                                            <option>SD</option>
-                                            <option>TN</option>
-                                            <option>TX</option>
-                                            <option>UT</option>
-                                            <option>VT</option>
-                                            <option>VA</option>
-                                            <option>WA</option>
-                                            <option>WV</option>
-                                            <option>WI</option>
-                                            <option>WY</option>
-                                          </select>
-                                        </div>
-                                        <div class="form-group col-md-2">
-                                          <label for="inputZip">Zip</label>
-                                          <input type="text" class="form-control" id="inputZip">
-                                        </div>
-                                      </div>
-                                     
-                                      <button type="submit" class="btn btn-primary">Delete Employee</button>
+                        <h3>Search employee by Id to delete</h3>
+                        <div class="col-sm-6 col-md-6well" id="content"> 
 
-                                </form>
+                                <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <form>
+                                        <label for="eId">EmployeeId</label>
+                                        <input type="text" class="form-control" id="eId" name = "eIds" placeholder="Employee Id">
+                                        <br>
+                                        <button type="button" id = "selected" class="btn btn-primary" >Select </button>
+                                    </form>
+                                </div>
+                                <div>
+                                            <table id = reList class="table table-hover">
+                                                <thead>
+                                                <tr>
+                                                <th scope="col">Employee Id</th>
+                                                <th scope="col">First Name</th>
+                                                <th scope="col">Last Name</th>
+                                                <th scope="col">Department</th>
+                                            </tr>
+                                            </thead>
+                                        
+                                            <tbody id = rList class="table table-hover">
+                                                
+                                            </tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+
+                                            <div class="col-sm-6 col-md-6well" id="content"> 
+                                                <form action ="http://localhost:8084/Project1/deleteEmployee" method ="POST">
+                                                    <div class="form-row">
+                                                            <div class="form-group col-md-12">
+                                                                    <label for="eId">Employee Id</label>
+                                                                    <input type="text" class="form-control" id="eId" name = "eId" placeholder="Employee Id">
+                                                                </div>
+
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputName">First Name</label>
+                                                            <input type="text" class="form-control" id="inputName" name = "inputName" placeholder="First Name">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="inputLastN">Last Name</label>
+                                                                <input type="text" class="form-control" id="inputLastN" name ="inputLastN" placeholder="Last Name">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="exampleFormControlSelect1">Title</label>
+                                                                <select class="form-control" id="exampleFormControlSelect1" name = "title">
+                                                                    <option>Associate</option>
+                                                                    <option>Manager</option>
+                                                                    <option>HR</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                <label for="inputDepartment">Department</label>
+                                                                <input type="text" class="form-control" id="inputDepartment" name = "subordinate" placeholder="Department">
+                                                        </div>
+                                                         <div class="form-group col-md-6">
+                                                                <label for="inputPhone">Phone</label>
+                                                                <input type="text" class="form-control" id="inputPhone" name = "phone" placeholder="Phone">
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                                <label for="inputDOB">Date of Birth</label>
+                                                                <input type="date" class="form-control" id="inputDOB" name = "dob">
+                                                                </div>
+                                                        <div class="form-group col-md-3">
+                                                                <label for="inputHire">Hire Date</label>
+                                                                <input type="date" class="form-control" id="inputHire" name = "hire">
+                                                        </div>
+                                                        </div>
+                                                      <div class="form-group">
+                                                        <label for="inputAddress">Address</label>
+                                                        <input type="text" class="form-control" id="inputAddress" name = "address" placeholder="1234 Main St">
+                                                      </div>
+                                                      <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                          <label for="inputCity">City</label>
+                                                          <input type="text" class="form-control" id="inputCity" name = "city">
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                          <label for="inputState">State</label>
+                                                          <select id="inputState" class="form-control" name ="state">
+                                                            <option selected>Choose...</option>
+                                                            <option>AK</option>
+                                                            <option>AL</option>
+                                                            <option>AZ</option>
+                                                            <option>AR</option>
+                                                            <option>CA</option>
+                                                            <option>CO</option>
+                                                            <option>CT</option>
+                                                            <option>DE</option>
+                                                            <option>FL</option>
+                                                            <option>GA</option>
+                                                            <option>HI</option>
+                                                            <option>ID</option>
+                                                            <option>IL</option>
+                                                            <option>IN</option>
+                                                            <option>IA</option>
+                                                            <option>KS</option>
+                                                            <option>KY</option>
+                                                            <option>LA</option>
+                                                            <option>ME</option>
+                                                            <option>MD</option>
+                                                            <option>MA</option>
+                                                            <option>MI</option>
+                                                            <option>MN</option>
+                                                            <option>MS</option>
+                                                            <option>MO</option>
+                                                            <option>MT</option>
+                                                            <option>NE</option>
+                                                            <option>NV</option>
+                                                            <option>NH</option>
+                                                            <option>NJ</option>
+                                                            <option>NM</option>
+                                                            <option>NY</option>
+                                                            <option>NC</option>
+                                                            <option>ND</option>
+                                                            <option>OH</option>
+                                                            <option>OK</option>
+                                                            <option>OR</option>
+                                                            <option>PA</option>
+                                                            <option>RI</option>
+                                                            <option>SC</option>
+                                                            <option>SD</option>
+                                                            <option>TN</option>
+                                                            <option>TX</option>
+                                                            <option>UT</option>
+                                                            <option>VT</option>
+                                                            <option>VA</option>
+                                                            <option>WA</option>
+                                                            <option>WV</option>
+                                                            <option>WI</option>
+                                                            <option>WY</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                          <label for="inputZip">Zip</label>
+                                                          <input type="text" class="form-control" id="inputZip" name="zip">
+                                                        </div>
+                                                      </div>
+                                                     
+                                                      <button type="submit" class="btn btn-primary">Delete</button>
+                
+                                                </form>
+                                    </div>
+                        </div>
+                       
                             </div>
                         </div>
                         <!-- /.row -->

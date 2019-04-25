@@ -40,15 +40,19 @@ public class UpdateEmployeeServlet extends HttpServlet {
 		int eId = Integer.parseInt(idE);
 		String firstName = request.getParameter("fname");
 		String lastName =request.getParameter("lname");
+		String title = request.getParameter("title");
+		String subordinate = request.getParameter("subordinate");
+		int sub= Integer.parseInt(subordinate);
 		String address = request.getParameter("address");
 		String phone = request.getParameter("phone");
 		String dob = request.getParameter("dob");
+		String hire = request.getParameter("hire");
 		String city = request.getParameter("city");
 		String state = request.getParameter("state");
 		String zip = request.getParameter("zip");
-		Employee emp = new Employee(eId,firstName,lastName,address,phone,dob,city,state,zip);
+		Employee emp = new Employee(eId,firstName,lastName,title,sub, address,phone,dob,hire, city,state,zip);
 		String result = uAS.updateEmployee(emp);
-		response.sendRedirect("updateA");
+		response.sendRedirect("updateEmployee");
 	}
 
 }
